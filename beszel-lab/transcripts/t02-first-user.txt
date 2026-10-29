@@ -1,0 +1,7 @@
+# First-run flow (what the web form does, driven through the hub API)
+$ GET /api/beszel/first-run
+{"firstRun":false}
+$ POST /api/beszel/create-user {"email":"admin@example.com","password":"lab-password-123"}  (throwaway lab password)
+{"msg":"User created"}
+$ POST /api/collections/users/auth-with-password -> token received; record email/role:
+admin@example.com admin

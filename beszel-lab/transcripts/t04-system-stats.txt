@@ -1,0 +1,11 @@
+$ GET /api/collections/system_stats/records?sort=-created (newest rows, stats decoded)
+total rows stored for lab-system at capture time: 15
+2026-10-29 18:21:47.732Z type=1m cpu=97.7% cores=[98, 98] mem=87.32% (6.77 GB used) disk=100% load=[12.37, 9.3, 6.08]
+2026-10-29 18:20:48.000Z type=1m cpu=98.46% cores=[99, 98] mem=90.61% (7.02 GB used) disk=100% load=[11.47, 8.5, 5.62]
+2026-10-29 18:20:00.006Z type=10m cpu=80.24% cores=[84, 77] mem=86.13% (6.67 GB used) disk=100% load=[5.86, 4.78, 3.9]
+
+$ row counts by type (live query at end of lab)
+ system_stats type 10m -> 1 rows
+ system_stats type 1m -> 15 rows
+ container_stats rows: 0 (no container runtime in this sandbox)
+ containers rows: 0

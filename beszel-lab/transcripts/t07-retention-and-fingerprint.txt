@@ -1,0 +1,21 @@
+# How long the hub keeps data (from the hub source, internal/records/records_deletion.go, v0.21.1)
+# An hourly job ("delete old records", minute 8) deletes stats older than these retentions:
+#   type 1m   (one-minute detail)    kept 1 hour
+#   type 10m                         kept 12 hours
+#   type 20m                         kept 24 hours
+#   type 120m                        kept 7 days
+#   type 480m (eight-hour averages)  kept 30 days
+# The hub rolls fine rows up into coarser ones as they age; the live database in this lab
+# held both 1m rows and a 10m row for the same system within the first 15 minutes (t04).
+# Alert history is capped at the newest 200 entries per user.
+
+# Size of the hub data directory after ~15 minutes monitoring one system:
+2.2M	/home/hatch/workspace/beszel-lab-work/hub/beszel_data
+
+# Fingerprint note: the lab ran a second agent on the same machine (own data dir, port 45877).
+# Both agents reported the same fingerprint, because the fingerprint is generated from the
+# machine host ID - one machine is one system to Beszel, however many agents run on it.
+# The two agents took turns holding the single connection until the second was stopped.
+# Fingerprint file contents were identical in both data dirs:
+  agent 1: d69b5bce293ca03f673b23af9a08a50752999650a6f4e936
+  agent 2: d69b5bce293ca03f673b23af9a08a50752999650a6f4e936

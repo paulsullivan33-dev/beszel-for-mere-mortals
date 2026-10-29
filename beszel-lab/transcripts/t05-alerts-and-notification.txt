@@ -1,0 +1,23 @@
+# Alerts: three rules with a deliberately tiny threshold (above 1% for 1 minute)
+$ GET /api/collections/alerts/records
+  CPU | threshold 1 | min 1 | triggered: True
+  Disk | threshold 1 | min 1 | triggered: True
+  Memory | threshold 1 | min 1 | triggered: True
+
+$ GET /api/collections/alerts_history/records?sort=-created
+  2026-10-29 18:20:48.063Z | Disk | resolved: (still triggered)
+  2026-10-29 18:17:47.708Z | Disk | resolved: 2026-10-29 18:19:59.329Z
+  2026-10-29 18:16:54.383Z | Memory | resolved: (still triggered)
+  2026-10-29 18:15:00.708Z | CPU | resolved: (still triggered)
+
+# The notification itself, captured by a tiny HTTP server listening on 127.0.0.1:9999
+# (the hub sent it to the shoutrrr URL generic+http://127.0.0.1:9999/beszel-alert)
+---
+POST /beszel-alert
+{'Host': '127.0.0.1:9999', 'User-Agent': 'Go-http-client/1.1', 'Content-Length': '139', 'Accept': 'text/plain', 'Content-Type': 'text/plain', 'Accept-Encoding': 'gzip'}
+lab-system disk usage above threshold
+
+Disk usage averaged 100.00% for the previous 1 minute.
+
+http://localhost:8090/system/hof5s133enzuew1
+---

@@ -1,0 +1,16 @@
+$ beszel-agent --help
+Usage: /home/hatch/workspace/beszel-lab-work/bin/beszel-agent [command] [flags]
+
+Commands:
+  fingerprint  View or reset the agent fingerprint
+  health       Check if the agent is running
+  update       Update to the latest version
+
+Flags:
+  -c, --china-mirrors   Use mirror for update (gh.beszel.dev) instead of GitHub
+  -h, --help            Show this help message
+  -k, --key string      Public key(s) for SSH authentication
+  -l, --listen string   Address or port to listen on
+  -t, --token string    Token to use for authentication
+  -u, --url string      URL of the Beszel hub
+  -v, --version         Show version information

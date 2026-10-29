@@ -1,0 +1,11 @@
+# Universal token activated (POST with enable=1), agent started with HUB_URL/TOKEN/KEY
+$ POST /api/beszel/universal-token {"enable":1,"permanent":1}
+{"token":"2f59306e-672b-4e7f-a0e5-b49b50625a8c","active":true,"permanent":true}
+$ beszel-agent (agent console log)
+2026/10/29 18:13:58 INFO Data directory path=/home/hatch/workspace/beszel-lab-work/agent-data
+2026/10/29 18:13:58 INFO Detected disk name=dm-1 device=dm-1 mount=/etc/hosts io=dm-1 root=true
+2026/10/29 18:13:58 INFO Detected network interface name=host0 sent=8175355 recv=614829013
+2026/10/29 18:13:58 INFO WebSocket connected host=127.0.0.1:8090
+
+$ GET /api/collections/systems/records -> the hub created the system when the agent connected
+lab-system | status: up | agent version: 0.21.1 | cpu%: 60 | mem%: 82.27

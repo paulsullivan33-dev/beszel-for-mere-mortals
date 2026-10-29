@@ -1,0 +1,7 @@
+# A second user (teammate@example.com, role "user") and sharing
+$ as teammate: GET /api/collections/systems/records
+  lab-system | status: up
+$ as teammate: GET /api/beszel/config-yaml (admin only)
+  HTTP 403
+$ as teammate: GET /api/collections/alerts/records (alerts belong to their owner)
+  alerts visible: 0

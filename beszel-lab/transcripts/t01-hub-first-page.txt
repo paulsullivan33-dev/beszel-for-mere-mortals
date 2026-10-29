@@ -1,0 +1,26 @@
+$ curl -s -D - http://127.0.0.1:8090/ (response headers)
+HTTP/1.1 200 OK
+Content-Type: text/html; charset=utf-8
+Cross-Origin-Opener-Policy: same-origin
+Vary: Origin
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+X-Xss-Protection: 1; mode=block
+Date: Thu, 29 Oct 2026 18:10:35 GMT
+Content-Length: 1214
+
+
+$ grep -o "<title>[^<]*</title>" on the hub home page
+<title>Beszel</title>
+
+$ ls beszel_data (the hub data directory after first start)
+auxiliary.db
+auxiliary.db-shm
+auxiliary.db-wal
+data.db
+data.db-shm
+data.db-wal
+id_ed25519
+
+$ ssh-keygen -y -f beszel_data/id_ed25519 (the hub public key, the KEY given to agents)
+ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIAV24PKaHe9FpKjBpq1ZxeBan41Gpywy0ffjRoPTYphF

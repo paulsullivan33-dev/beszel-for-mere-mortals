@@ -1,0 +1,46 @@
+$ beszel --version
+beszel version 0.21.1
+
+$ beszel --help
+Usage:
+  beszel [command]
+
+Available Commands:
+  health      Check health of running hub
+  migrate     Executes app DB migration scripts
+  serve       Starts the web server (default to 127.0.0.1:8090 if no domain is specified)
+  superuser   Manage superusers
+  update      Update beszel to the latest version
+
+Flags:
+      --dev                    enable dev mode, aka. printing logs and sql statements to the console
+      --dir string             the PocketBase data directory (default "beszel_data")
+      --encryptionEnv string   the env variable whose value of 32 characters will be used 
+                               as encryption key for the app settings (default none)
+  -h, --help                   help for beszel
+      --queryTimeout int       the default SELECT queries timeout in seconds (default 30)
+  -v, --version                version for beszel
+
+Use "beszel [command] --help" for more information about a command.
+
+$ beszel serve --help
+Starts the web server (default to 127.0.0.1:8090 if no domain is specified)
+
+Usage:
+  beszel serve [domain(s)] [flags]
+
+Flags:
+  -h, --help              help for serve
+      --http string       TCP address to listen for the HTTP server
+                          (if domain args are specified - default to 0.0.0.0:80, otherwise - default to 127.0.0.1:8090)
+      --https string      TCP address to listen for the HTTPS server
+                          (if domain args are specified - default to 0.0.0.0:443, otherwise - default to empty string, aka. no TLS)
+                          The incoming HTTP traffic also will be auto redirected to the HTTPS version
+      --origins strings   CORS allowed domain origins list (default [*])
+
+Global Flags:
+      --dev                    enable dev mode, aka. printing logs and sql statements to the console
+      --dir string             the PocketBase data directory (default "beszel_data")
+      --encryptionEnv string   the env variable whose value of 32 characters will be used 
+                               as encryption key for the app settings (default none)
+      --queryTimeout int       the default SELECT queries timeout in seconds (default 30)

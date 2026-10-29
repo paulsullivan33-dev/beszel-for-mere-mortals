@@ -1,0 +1,26 @@
+site_name: Beszel for Mere Mortals
+site_description: A lightweight monitoring system for your own machines. One small hub with a web dashboard, an agent on each machine you watch, a history of processor, memory, disk and network use, and alerts when a number stays wrong, explained in plain language with the limits stated plainly.
+site_url: https://paulsullivan33-dev.github.io/beszel-for-mere-mortals/
+copyright: 'Part of <a href="https://paulsullivan33-dev.github.io/mere-mortals/">For Mere Mortals</a> · Text <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>, code MIT'
+
+# Guides live at the repo root (nice for GitHub browsing).
+# The deploy workflow copies them into docs/ before building.
+theme:
+  name: material
+
+nav:
+  - Home: index.md
+  - What Beszel Is: what-beszel-is.md
+  - The Moving Parts: the-moving-parts.md
+  - Installing Beszel: installing-beszel.md
+  - Your First System: your-first-system.md
+  - What the Hub Records: what-the-hub-records.md
+  - Alerts and Notifications: alerts-and-notifications.md
+  - More Systems and More Users: more-systems-and-users.md
+  - History and How Long It Keeps Data: history-and-retention.md
+  - Recipes: recipes.md
+  - The Neighbours: the-neighbours.md
+  - Limits: limits.md
+  - Troubleshooting: troubleshooting.md
+  - Glossary: glossary.md
+  - Writing Criteria: criteria.md
